@@ -25,7 +25,6 @@ def main():
             for index,im in enumerate(preds):
                 st.image(im, imgname[index])
             print('done')
-        
     else:
         return
 
