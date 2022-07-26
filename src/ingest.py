@@ -10,6 +10,6 @@ origimg_path = os.path.join('data', 'store', f"v{params['dcount']}")
 os.makedirs(data_path, exist_ok=True)
 os.makedirs(origimg_path, exist_ok=True)
 
-with zipfile.ZipFile(f'/Users/vaibhav/Desktop/boschdvc/MLOps_Pipeline/buffer/dataset{params["dcount"]}.zip',"r") as zipf:
+with zipfile.ZipFile(f'/home/bvem1kor/Documents/dvcpipeline/buffer/dataset{params["dcount"]}.zip',"r") as zipf:
     zipf.extractall(data_path)
     zipf.extractall(origimg_path)
