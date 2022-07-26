@@ -1,6 +1,6 @@
 stages:
   ingest:
-    cmd: python3 src/ingest.py
+    cmd: /home/appuser/venv/bin/python src/ingest.py
     deps:
     - src/ingest.py
     params:
@@ -8,7 +8,7 @@ stages:
     outs:
     - data/prepared
   predict:
-    cmd: python3 src/predict.py data/prepared data/predictions data/store
+    cmd: /home/appuser/venv/bin/python src/predict.py data/prepared data/predictions data/store
     deps:
     - data/prepared
     - src/predict.py
