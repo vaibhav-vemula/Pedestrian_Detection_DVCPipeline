@@ -6,7 +6,7 @@ import sys
 
 def main():
     st.title("Hello World")
-    
+    st.write(sys.executable)
     imgs = st.file_uploader("Choose Images (Zip File)")
     
     if imgs:
@@ -22,6 +22,7 @@ def main():
             f.write(imgs.getbuffer())
         
         print('hello................', sys.executable)
+        
         
         if not os.system("dvc repro"):
             imgname = os.listdir("data/store/v{}/predictions".format(params["dcount"]+1))
