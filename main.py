@@ -13,6 +13,7 @@ def main():
         ddd = {'ingest': {'dcount': params['dcount']+1}}
         yaml.dump(ddd, open('params.yaml', 'w'))
         
+        os.makedirs('buffer', exist_ok=True)
         for ff in os.listdir('buffer'):
             os.remove(f'buffer/{ff}')
     

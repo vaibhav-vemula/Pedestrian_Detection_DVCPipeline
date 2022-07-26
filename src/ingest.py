@@ -1,6 +1,7 @@
 import os
 import yaml
 import zipfile
+import sys
 
 params = yaml.safe_load(open('params.yaml'))['ingest']
 
@@ -9,7 +10,7 @@ origimg_path = os.path.join('data', 'store', f"v{params['dcount']}")
 # print(data_path)
 os.makedirs(data_path, exist_ok=True)
 os.makedirs(origimg_path, exist_ok=True)
-
-with zipfile.ZipFile(f'/home/bvem1kor/Documents/dvcpipeline/buffer/dataset{params["dcount"]}.zip',"r") as zipf:
+sys.path.append('../')
+with zipfile.ZipFile(f'buffer/dataset{params["dcount"]}.zip',"r") as zipf:
     zipf.extractall(data_path)
     zipf.extractall(origimg_path)

@@ -4,21 +4,21 @@ stages:
     cmd: python3 src/ingest.py
     deps:
     - path: src/ingest.py
-      md5: 27dd159b1be254f77bf9147be57cba26
-      size: 507
+      md5: 2a9395e1a142e6f3ff1fdefb0a837f90
+      size: 503
     params:
       params.yaml:
-        ingest.dcount: 3
+        ingest.dcount: 4
     outs:
     - path: data/prepared
-      md5: 61fc3b88a0d06bbc719b8c34d3ff2bde.dir
+      md5: f50d0c0cc7e90be84b39d8aab24dab68.dir
       size: 533711
       nfiles: 10
   predict:
     cmd: python3 src/predict.py data/prepared data/predictions data/store
     deps:
     - path: data/prepared
-      md5: 61fc3b88a0d06bbc719b8c34d3ff2bde.dir
+      md5: f50d0c0cc7e90be84b39d8aab24dab68.dir
       size: 533711
       nfiles: 10
     - path: src/predict.py
@@ -26,9 +26,9 @@ stages:
       size: 1115
     params:
       params.yaml:
-        ingest.dcount: 3
+        ingest.dcount: 4
     outs:
     - path: data/predictions
-      md5: d39376ce60cc1426192600c6d3a8875a.dir
+      md5: cd80206f267998f85a4830738a6d4e0d.dir
       size: 169791
       nfiles: 5
