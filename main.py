@@ -2,7 +2,7 @@ import streamlit as st
 import yaml
 import os
 import glob
-import subprocess
+import sys
 
 def main():
     st.title("Hello World")
@@ -20,6 +20,8 @@ def main():
     
         with open(f'buffer/dataset{params["dcount"]+1}.zip', "wb") as f:
             f.write(imgs.getbuffer())
+        
+        print('hello................', sys.executable)
         
         if not os.system("dvc repro"):
             imgname = os.listdir("data/store/v{}/predictions".format(params["dcount"]+1))
