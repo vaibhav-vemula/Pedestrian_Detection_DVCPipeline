@@ -14,6 +14,7 @@ if len(sys.argv) != 4:
 
 params = yaml.safe_load(open('params.yaml'))['ingest']
 
+
 data_path = os.path.join(sys.argv[1], f"v{params['dcount']}", 'images')
 predict_path = os.path.join(sys.argv[2], f"v{params['dcount']}", 'images')
 origpred = os.path.join(sys.argv[3], f"v{params['dcount']}", 'predictions')
