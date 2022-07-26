@@ -8,10 +8,10 @@ stages:
       size: 503
     params:
       params.yaml:
-        ingest.dcount: 2
+        ingest.dcount: 7
     outs:
     - path: data/prepared
-      md5: a3286163c88728eb315902f9374b0c11.dir
+      md5: b9a5ec32df6ff922b0702d29cb6b00ae.dir
       size: 646768
       nfiles: 10
   predict:

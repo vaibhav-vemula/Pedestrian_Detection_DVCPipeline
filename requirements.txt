@@ -122,3 +122,5 @@ Werkzeug==2.1.2
 widgetsnbextension==3.6.1
 zipp==3.8.1
 dvc
+pyyaml
+opencv-python
