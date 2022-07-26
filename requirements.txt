@@ -104,9 +104,9 @@ thop==0.1.1.post2207130030
 tinycss2==1.1.1
 toml==0.10.2
 toolz==0.12.0
-torch==1.9.0+cpu
+torch==1.9.0
 torchaudio==0.9.0
-torchvision==0.10.0+cpu
+torchvision==0.10.0
 tornado==6.2
 tqdm==4.64.0
 traitlets==5.3.0
