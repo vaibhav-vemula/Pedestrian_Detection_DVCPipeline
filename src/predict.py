@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import torch
 import sys
 import os
