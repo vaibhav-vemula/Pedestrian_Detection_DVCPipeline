@@ -4,31 +4,73 @@ stages:
     cmd: python3 src/ingest.py
     deps:
     - path: src/ingest.py
-      md5: 43e8a41a4a2eef6a120607fc271327d5
-      size: 536
+      md5: 2a9395e1a142e6f3ff1fdefb0a837f90
+      size: 503
     params:
       params.yaml:
-        ingest.dcount: 2
+        ingest.dcount: 1
     outs:
     - path: data/prepared
-      md5: a3286163c88728eb315902f9374b0c11.dir
+      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
       size: 646768
       nfiles: 10
   predict:
     cmd: python3 src/predict.py data/prepared data/predictions data/store
     deps:
     - path: data/prepared
-      md5: a3286163c88728eb315902f9374b0c11.dir
+      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
       size: 646768
       nfiles: 10
     - path: src/predict.py
-      md5: 7fea726f9070358ab6373cc5e63d4f0d
-      size: 1149
+      md5: 19090ad84ca1c1b7a379dcf8d2deb7a2
+      size: 1135
     params:
       params.yaml:
-        ingest.dcount: 2
+        ingest.dcount: 1
     outs:
     - path: data/predictions
-      md5: 789f4a8e255885fe3c4051159ce944fa.dir
-      size: 223430
+      md5: 964286e6565a1f2ce30fb988293fe0f6.dir
+      size: 212688
       nfiles: 5
+  transform:
+    cmd: python3 src/transform.py data/prepared data/transformed
+    deps:
+    - path: data/prepared
+      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
+      size: 646768
+      nfiles: 10
+    - path: src/transform.py
+      md5: ffcda9d1a89b2a242f0d5460719699f1
+      size: 1844
+    params:
+      params.yaml:
+        ingest.dcount: 1
+    outs:
+    - path: data/transformed
+      md5: a27637dd6835ef990ca144bb98d3e98f.dir
+      size: 1804
+      nfiles: 1
+  evaluate:
+    cmd: python3 src/evaluate.py data/prepared data/transformed data/predictions data/evaluated
+      data/store
+    deps:
+    - path: data/predictions
+      md5: 964286e6565a1f2ce30fb988293fe0f6.dir
+      size: 212688
+      nfiles: 5
+    - path: data/prepared
+      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
+      size: 646768
+      nfiles: 10
+    - path: data/transformed
+      md5: a27637dd6835ef990ca144bb98d3e98f.dir
+      size: 1804
+      nfiles: 1
+    params:
+      params.yaml:
+        ingest.dcount: 1
+    outs:
+    - path: data/evaluated
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0

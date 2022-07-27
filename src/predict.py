@@ -25,7 +25,8 @@ print(data_path)
 os.makedirs(predict_path, exist_ok=True)
 os.makedirs(origpred, exist_ok=True)
 
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, _verbose =False )
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, _verbose =False)
+model.classes = [0]
 img = os.path.join(data_path, os.listdir(data_path)[0])
 
 preds = glob.glob(f'{data_path}/*.jpg', recursive=True)

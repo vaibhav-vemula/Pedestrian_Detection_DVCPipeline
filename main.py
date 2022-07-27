@@ -5,7 +5,7 @@ import glob
 import sys
 
 def main():
-    st.title("Hello World")
+    st.title("Pedestrian Detection Pipeline")
     st.write(sys.executable)
     imgs = st.file_uploader("Choose Images (Zip File)")
     
@@ -23,8 +23,8 @@ def main():
         
         print('hello................', sys.executable)
         
-        
         if not os.system("dvc repro"):
+            st.success('Pipeline executed successfully')
             imgname = os.listdir("data/store/v{}/predictions".format(params["dcount"]+1))
             preds = glob.glob("data/store/v{}/predictions/*.*".format(params["dcount"]+1), recursive=True)
             for index,im in enumerate(preds):
@@ -32,7 +32,6 @@ def main():
             print('done')
     else:
         return
-
 
 if __name__ == '__main__':
     main()
