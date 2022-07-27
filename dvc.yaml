@@ -10,7 +10,7 @@ stages:
     - data/prepared
 
   transform:
-    cmd: home/appuser/venv/bin/python src/transform.py data/prepared data/transformed
+    cmd: /home/appuser/venv/bin/python src/transform.py data/prepared data/transformed
     # cmd: python3 src/transform.py data/prepared data/transformed
     deps:
     - src/transform.py
