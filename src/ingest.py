@@ -1,5 +1,3 @@
-#!/home/appuser/venv/bin python3
-
 import os
 import yaml
 import zipfile
