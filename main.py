@@ -25,8 +25,8 @@ def main():
         
         if not os.system("dvc repro"):
             st.success('Pipeline executed successfully')
-            imgname = os.listdir("data/store/v{}/predictions".format(params["dcount"]+1))
-            preds = glob.glob("data/store/v{}/predictions/*.*".format(params["dcount"]+1), recursive=True)
+            imgname = os.listdir("data/store/v{}/evaluated".format(params["dcount"]+1))
+            preds = glob.glob("data/store/v{}/evaluated/*.*".format(params["dcount"]+1), recursive=True)
             for index,im in enumerate(preds):
                 st.image(im, imgname[index])
             print('done')

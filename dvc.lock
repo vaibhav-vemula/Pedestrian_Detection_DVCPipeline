@@ -4,73 +4,73 @@ stages:
     cmd: python3 src/ingest.py
     deps:
     - path: src/ingest.py
-      md5: 2a9395e1a142e6f3ff1fdefb0a837f90
-      size: 503
+      md5: 21c5e62fa0fcd74943c8b1c36dfc081e
+      size: 615
     params:
       params.yaml:
-        ingest.dcount: 1
+        ingest.dcount: 6
     outs:
     - path: data/prepared
-      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
-      size: 646768
-      nfiles: 10
+      md5: c0d823fca59c7f537696a2dd6ed1822a.dir
+      size: 778450
+      nfiles: 24
   predict:
     cmd: python3 src/predict.py data/prepared data/predictions data/store
     deps:
     - path: data/prepared
-      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
-      size: 646768
-      nfiles: 10
+      md5: c0d823fca59c7f537696a2dd6ed1822a.dir
+      size: 778450
+      nfiles: 24
     - path: src/predict.py
-      md5: 19090ad84ca1c1b7a379dcf8d2deb7a2
-      size: 1135
+      md5: a0879833f39778bd56830e837a7c1007
+      size: 2215
     params:
       params.yaml:
-        ingest.dcount: 1
+        ingest.dcount: 6
     outs:
     - path: data/predictions
-      md5: 964286e6565a1f2ce30fb988293fe0f6.dir
-      size: 212688
-      nfiles: 5
+      md5: 850c6d36cf5f194f67d58e8c448aa8b2.dir
+      size: 1860
+      nfiles: 1
   transform:
     cmd: python3 src/transform.py data/prepared data/transformed
     deps:
     - path: data/prepared
-      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
-      size: 646768
-      nfiles: 10
+      md5: c0d823fca59c7f537696a2dd6ed1822a.dir
+      size: 778450
+      nfiles: 24
     - path: src/transform.py
-      md5: ffcda9d1a89b2a242f0d5460719699f1
-      size: 1844
+      md5: 1ef7d77a46b77b0929aad454bcf7d721
+      size: 2419
     params:
       params.yaml:
-        ingest.dcount: 1
+        ingest.dcount: 6
     outs:
     - path: data/transformed
-      md5: a27637dd6835ef990ca144bb98d3e98f.dir
-      size: 1804
+      md5: 6a6d51bebfc612a3572a9ef72adf8977.dir
+      size: 2042
       nfiles: 1
   evaluate:
     cmd: python3 src/evaluate.py data/prepared data/transformed data/predictions data/evaluated
       data/store
     deps:
     - path: data/predictions
-      md5: 964286e6565a1f2ce30fb988293fe0f6.dir
-      size: 212688
-      nfiles: 5
+      md5: 850c6d36cf5f194f67d58e8c448aa8b2.dir
+      size: 1860
+      nfiles: 1
     - path: data/prepared
-      md5: a50fd6cb3dd2132b7c23bfa73ae1bffe.dir
-      size: 646768
-      nfiles: 10
+      md5: c0d823fca59c7f537696a2dd6ed1822a.dir
+      size: 778450
+      nfiles: 24
     - path: data/transformed
-      md5: a27637dd6835ef990ca144bb98d3e98f.dir
-      size: 1804
+      md5: 6a6d51bebfc612a3572a9ef72adf8977.dir
+      size: 2042
       nfiles: 1
     params:
       params.yaml:
-        ingest.dcount: 1
+        ingest.dcount: 6
     outs:
     - path: data/evaluated
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+      md5: d3398b03c9696e2504ccb28955a1b65d.dir
+      size: 627027
+      nfiles: 6
