@@ -139,8 +139,8 @@ for image_name in tqdm(image_names_list, file=sys.__stdout__):
 				1, cv2.LINE_AA)
 
 	
-	save_path = os.path.join(output, image_name + ".jpg")
-	store_path = os.path.join(store, image_name + ".jpg")
+	save_path = os.path.join(output, image_name)
+	store_path = os.path.join(store, image_name)
 	cv2.imwrite(save_path,img)
 	cv2.imwrite(store_path,img)
 
