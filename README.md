@@ -10,7 +10,6 @@
 
 > ## Checkout to `clouds3` branch for pushing results/outputs to AWS S3 Bucket
 <br/>
-<br/>
 
 # Getting Started
 ## 1. Create a Python environment
