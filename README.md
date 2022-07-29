@@ -1,4 +1,4 @@
-# Pedestrian Detection Pipeline
+# Pedestrian Detection MLOps Pipeline
 
 ## DVC pipeline for Object Detection using YoloV5 with Data Versioning
 
