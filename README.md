@@ -2,34 +2,38 @@
 
 ## DVC pipeline for Object Detection using YoloV5 with Data Versioning
 
-<img src="screenshots/pipe.png" alt="Pipeline screenshot" title="DVC Pipeline" height="350">
+<img src="screenshots/pipe.png" alt="Pipeline screenshot" title="DVC Pipeline" height="390">
 
-### TODO: *Train Stage*
+- ## TODO: *Train Stage*
 
 <br/>
 
-## Getting Started
-### 1. Create a Python environment
+> ## Checkout to `clouds3` branch for pushing results/outputs to AWS S3 Bucket
+<br/>
+<br/>
+
+# Getting Started
+## 1. Create a Python environment
 ```shell
 python3 -m venv <env_name>
 source <env_name>/bin/activate
 ```
 
-### 2. To initialize DVC an GIT
+## 2. To initialize DVC an GIT
 ```shell
 pip3 install dvc
 git init
 dvc init
 ```
 
-### 3. Installing dependencies
+## 3. Installing dependencies
 To install requirements for running object detection pipeline with YoloV5
 Requires PyTorch, CUDA(if GPU Enabled)
 ```shell
 pip3 install -r requirements.txt
 ````
 
-### 4. Setting paramenters
+## 4. Setting paramenters
 Here dcount is the number of versions of datasets uploaded(dcount = 0 when initialised)
 ```
 # file params.yaml
@@ -42,12 +46,12 @@ ingest:
 dvc repro
 ```
 
-### 6. To run Streamlit App
+## 6. To run Streamlit App
 ```shell
 streamlit run main.py
 ```
 
-### 7. Adding pipeline stage
+## 7. Adding pipeline stage
 
 ```shell
 dvc run -n <Stage_name> 
@@ -57,12 +61,12 @@ dvc run -n <Stage_name>
     python3 src/prepare.py
 ```
 
-### 8. Pipeline DAG
+## 8. Pipeline DAG
 ```shell
 dvc dag
 ```
 
-### 9. Push results/outputs to AWS S3
+## 9. Push results/outputs to AWS S3
 Create .streamlit/secrets.toml file and add your AWS S3 BUCKET ACCESS_KEY and SECRET_KEY
 
 ```
