@@ -1,6 +1,12 @@
 # Pedestrian Detection Pipeline
 
-DVC pipeline for Object Detection using YoloV5 with Data Versioning
+## DVC pipeline for Object Detection using YoloV5 with Data Versioning
+
+<img src="screenshots/pipe.png" alt="Pipeline screenshot" title="DVC Pipeline" height="350">
+
+### TODO: *Train Stage*
+
+<br/>
 
 ## Getting Started
 ### 1. Create a Python environment
