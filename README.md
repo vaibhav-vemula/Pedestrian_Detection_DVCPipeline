@@ -4,8 +4,6 @@
 
 <img src="screenshots/pipe.png" alt="Pipeline screenshot" title="DVC Pipeline" height="390">
 
-- ## TODO: *Train Stage*
-
 <br/>
 
 > ## Checkout to `clouds3` branch for pushing results/outputs to AWS S3 Bucket
