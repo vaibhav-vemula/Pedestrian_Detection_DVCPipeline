@@ -9,7 +9,7 @@ python3 -m venv <env_name>
 source <env_name>/bin/activate
 ```
 
-### 2. To initialize DVC an GIT
+### 2. To initialize DVC and GIT
 ```shell
 pip3 install dvc
 git init
