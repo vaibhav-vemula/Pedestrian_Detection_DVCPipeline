@@ -4,7 +4,6 @@ import zipfile
 import sys
 
 params = yaml.safe_load(open('params.yaml'))['ingest']
-
 data_path = os.path.join('data', 'prepared', f"v{params['dcount']}")
 origimg_path = os.path.join('data', 'store', f"v{params['dcount']}")
 # print(data_path)
